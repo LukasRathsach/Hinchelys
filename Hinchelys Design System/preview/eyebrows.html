@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--alabaster); padding: 32px; }
+  .stack { display: flex; flex-direction: column; gap: 24px; }
+  .item { display: flex; gap: 24px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
+  .item:last-child { border-bottom: none; }
+  .num { font-family: var(--font-mono); font-size: 11px; color: var(--fg-muted); width: 80px; }
+  .ey {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--jet-black);
+  }
+  .ey.muted { color: var(--fg-muted); }
+  .ey.accent .star { color: var(--aureolin); }
+  .ey.accent { background: var(--jet-black); color: var(--alabaster); padding: 6px 10px; }
+</style>
+</head>
+<body>
+<div class="stack">
+  <div class="item"><div class="num">PLAIN</div><div class="ey">01 · Virksomheder</div></div>
+  <div class="item"><div class="num">PLAIN</div><div class="ey">Iværksætteri · Forfatter · Foredrag</div></div>
+  <div class="item"><div class="num">MUTED</div><div class="ey muted">12. Marts 2026 · Iværksætteri</div></div>
+  <div class="item"><div class="num">ACCENT</div><div class="ey accent"><span class="star">★</span>&nbsp; Nyt foredrag</div></div>
+</div>
+</body>
+</html>

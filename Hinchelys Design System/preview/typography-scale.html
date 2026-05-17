@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--alabaster); padding: 28px 32px; }
+  .row {
+    display: grid;
+    grid-template-columns: 100px 1fr 110px;
+    align-items: baseline;
+    gap: 24px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .row:last-child { border-bottom: none; }
+  .label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-muted);
+    text-align: right;
+  }
+  .serif { font-family: var(--font-serif); font-weight: var(--weight-light); color: var(--jet-black); line-height: 1.05; }
+  .sans  { font-family: var(--font-sans);  font-weight: var(--weight-light); color: var(--jet-black); line-height: 1.4;  letter-spacing: -0.01em; }
+</style>
+</head>
+<body>
+  <div class="row"><div class="label">Display</div><div class="serif" style="font-size: 64px;">Sønderjylland</div><div class="meta">96–152 / EB Garamond</div></div>
+  <div class="row"><div class="label">H1</div><div class="serif" style="font-size: 44px;">Tre virksomheder.</div><div class="meta">44–88 / EB Garamond</div></div>
+  <div class="row"><div class="label">H2</div><div class="serif" style="font-size: 32px;">Foredrag og bestyrelser</div><div class="meta">32–56 / EB Garamond</div></div>
+  <div class="row"><div class="label">H3</div><div class="serif" style="font-size: 24px;">Den Sidste Flaske</div><div class="meta">24–36 / EB Garamond</div></div>
+  <div class="row"><div class="label">Body LG</div><div class="sans" style="font-size: 20px;">Iværksættere fra Sønderjylland — ikke et konsulenthus.</div><div class="meta">20 / Hanken</div></div>
+  <div class="row"><div class="label">Body</div><div class="sans" style="font-size: 17px;">250.000+ kunder, tre lande, snart 50 ansatte.</div><div class="meta">17 / Hanken</div></div>
+  <div class="row"><div class="label">Small</div><div class="sans" style="font-size: 15px;">Vi vender tilbage inden for 48 timer.</div><div class="meta">15 / Hanken</div></div>
+</body>
+</html>

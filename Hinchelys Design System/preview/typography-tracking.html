@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--alabaster); padding: 28px 32px; }
+  .row {
+    display: grid;
+    grid-template-columns: 110px 1fr 90px;
+    align-items: baseline;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .row:last-child { border-bottom: none; }
+  .label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .demo  { font-family: var(--font-sans); font-size: 17px; font-weight: var(--weight-light); color: var(--jet-black); }
+  .meta  { font-family: var(--font-mono); font-size: 11px; color: var(--fg-muted); text-align: right; }
+  .tight    { letter-spacing: -0.01em; }
+  .normal   { letter-spacing: 0; font-family: var(--font-serif); }
+  .cta      { letter-spacing: 0.18em; text-transform: uppercase; font-size: 13px; font-weight: var(--weight-medium); }
+  .extreme  { letter-spacing: 0.32em; text-transform: uppercase; font-size: 13px; font-weight: var(--weight-medium); }
+</style>
+</head>
+<body>
+  <div class="row"><div class="label">Body</div><div class="demo tight">Iværksættere fra Sønderjylland</div><div class="meta">-0.01em</div></div>
+  <div class="row"><div class="label">Heading</div><div class="demo normal">Iværksættere fra Sønderjylland</div><div class="meta">0</div></div>
+  <div class="row"><div class="label">CTA</div><div class="demo cta">Book foredrag</div><div class="meta">0.18em</div></div>
+  <div class="row"><div class="label">Extreme</div><div class="demo extreme">P L A Y F U L</div><div class="meta">0.32em</div></div>
+</body>
+</html>

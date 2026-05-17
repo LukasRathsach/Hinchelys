@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--alabaster); }
+  body { padding: 24px; }
+  .card { display: flex; align-items: stretch; }
+  .swatch {
+    flex: 1;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 18px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+  }
+  .swatch .name { font-weight: var(--weight-medium); }
+  .swatch .meta {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    opacity: 0.7;
+    font-weight: var(--weight-light);
+  }
+  .swatch.jet      { background: var(--jet-black);  color: var(--alabaster); }
+  .swatch.alabaster{ background: var(--alabaster);  color: var(--jet-black);  border: 1px solid var(--border-soft); }
+  .swatch.concrete { background: var(--concrete);   color: var(--jet-black); }
+  .swatch.aureolin { background: var(--aureolin);   color: var(--jet-black); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="swatch jet">
+    <div class="name">Jet Black</div>
+    <div class="meta">#111111 · primary ink</div>
+  </div>
+  <div class="swatch alabaster">
+    <div class="name">Alabaster</div>
+    <div class="meta">#F3F3F3 · page bg</div>
+  </div>
+  <div class="swatch concrete">
+    <div class="name">Concrete</div>
+    <div class="meta">#B6B6B6 · alt neutral</div>
+  </div>
+  <div class="swatch aureolin">
+    <div class="name">Aureolin</div>
+    <div class="meta">#F1EB2F · accent</div>
+  </div>
+</div>
+</body>
+</html>

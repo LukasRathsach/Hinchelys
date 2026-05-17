@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--alabaster); padding: 24px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    border: 1px solid var(--jet-black);
+    padding: 24px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .card.inv { background: var(--jet-black); color: var(--alabaster); }
+  .tag {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+  }
+  .name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: var(--weight-light);
+    font-size: 32px;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .desc {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: var(--weight-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .card .desc { color: var(--fg-muted); }
+  .card.inv .desc { color: var(--concrete); }
+  .cta {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    display: inline-flex;
+    gap: 8px;
+  }
+  .label {
+    grid-column: span 2;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: -4px;
+  }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="label">Default · Hover (inverted)</div>
+  <div class="card">
+    <div class="tag">Vin · 250.000+ kunder</div>
+    <div>
+      <h3 class="name">Den Sidste Flaske</h3>
+    </div>
+    <div>
+      <p class="desc">Danmarks hurtigst voksende online vinhandel. Tre lande, snart 50 ansatte.</p>
+      <div class="cta" style="margin-top: 16px;">Besøg site <span>→</span></div>
+    </div>
+  </div>
+  <div class="card inv">
+    <div class="tag">Restaurant · Sønderborg</div>
+    <div>
+      <h3 class="name">Bistro Neuf</h3>
+    </div>
+    <div>
+      <p class="desc">Sønderjysk bistro med fokus på vinen vi selv importerer.</p>
+      <div class="cta" style="margin-top: 16px;">Besøg site <span>→</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

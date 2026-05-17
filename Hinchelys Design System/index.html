@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>HINCHELYS — Design System</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  :root { --maxw-overview: 1120px; }
+  body { margin: 0; padding: 0; background: var(--alabaster); }
+  main { max-width: var(--maxw-overview); margin: 0 auto; padding: 96px var(--gutter); }
+
+  .topline {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 32px; margin-bottom: 64px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .topline .meta {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+
+  h1.title {
+    font-family: var(--font-serif);
+    font-weight: var(--weight-light);
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.98;
+    margin: 0;
+    max-width: 880px;
+  }
+  h1.title em { font-style: italic; }
+  .lede {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-light);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--fg-muted);
+    max-width: 640px;
+    margin: 32px 0 0;
+  }
+
+  section { margin-top: 128px; }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .section-head h2 {
+    font-family: var(--font-serif);
+    font-weight: var(--weight-light);
+    font-size: 36px;
+    margin: 0;
+  }
+  .section-head .number {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+
+  .files {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border-soft);
+    border: 1px solid var(--border-soft);
+  }
+  .files a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 22px;
+    background: var(--alabaster);
+    color: var(--jet-black);
+    text-decoration: none;
+    border-bottom: none;
+    transition: background var(--dur-base) var(--ease-out);
+  }
+  .files a:hover { background: var(--pure-white); }
+  .files .kind {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .files .label {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: var(--weight-light);
+    line-height: 1.15;
+  }
+  .files .desc {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: var(--weight-light);
+    line-height: 1.5;
+    color: var(--fg-muted);
+    margin-top: 8px;
+  }
+
+  /* Color row */
+  .swatch-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border-soft); border: 1px solid var(--border-soft); }
+  .sw {
+    aspect-ratio: 5/3;
+    padding: 18px 20px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+  }
+  .sw .hex { opacity: 0.75; font-size: 10px; letter-spacing: 0.04em; text-transform: none; font-weight: var(--weight-light); }
+  .sw.jet { background: var(--jet-black); color: var(--alabaster); }
+  .sw.alab { background: var(--alabaster); color: var(--jet-black); }
+  .sw.conc { background: var(--concrete); color: var(--jet-black); }
+  .sw.aur  { background: var(--aureolin); color: var(--jet-black); }
+
+  /* Type sample */
+  .type-grid { display: grid; grid-template-columns: 110px 1fr; gap: 32px 24px; align-items: baseline; }
+  .type-grid .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-muted);
+    padding-top: 18px;
+  }
+  .type-grid .serif { font-family: var(--font-serif); font-weight: var(--weight-light); color: var(--jet-black); }
+  .type-grid .sans { font-family: var(--font-sans); font-weight: var(--weight-light); color: var(--jet-black); letter-spacing: -0.01em; }
+
+  /* Components row */
+  .btn-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    height: 48px; padding: 0 24px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    border: 1px solid var(--jet-black);
+    border-radius: 2px;
+    background: var(--jet-black);
+    color: var(--alabaster);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn.ghost { background: transparent; color: var(--jet-black); }
+
+  footer.colophon {
+    margin-top: 192px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-soft);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="topline">
+    <img src="assets/logotype_black.svg" alt="HINCHELYS" style="height: 26px;">
+    <div class="meta">Design System · v0.1</div>
+  </div>
+
+  <h1 class="title">Et designsystem til <em>HINCHELYS-platformen.</em></h1>
+  <p class="lede">Tokens, typografi, motivskomponenter og indholdsregler — bygget til at fodre Claude i VS Code, så websitet kan udvikles direkte herfra. Brandbogens fundament er bevaret. Sproget kommer fra Tobias's LinkedIn.</p>
+
+  <!-- Files / index -->
+  <section>
+    <div class="section-head">
+      <span class="number">01 · Manifest</span>
+      <h2>Filer at læse først</h2>
+    </div>
+    <div class="files">
+      <a href="README.md"><span class="kind">Markdown</span><span class="label">README.md</span><span class="desc">Brand, voice, visual foundations. Start her.</span></a>
+      <a href="web/patterns.md"><span class="kind">Markdown</span><span class="label">web/patterns.md</span><span class="desc">Sektion-for-sektion designspecs for sitet.</span></a>
+      <a href="colors_and_type.css"><span class="kind">CSS</span><span class="label">colors_and_type.css</span><span class="desc">Alle tokens som CSS custom properties.</span></a>
+      <a href="SKILL.md"><span class="kind">Markdown</span><span class="label">SKILL.md</span><span class="desc">Agent Skill-manifest til Claude Code.</span></a>
+      <a href="web/components/"><span class="kind">JSX</span><span class="label">web/components/</span><span class="desc">14 referencekomponenter med inline-styles.</span></a>
+      <a href="assets/brandbook.pdf"><span class="kind">PDF</span><span class="label">assets/brandbook.pdf</span><span class="desc">Original 12-siders brandbog.</span></a>
+    </div>
+  </section>
+
+  <!-- Color -->
+  <section>
+    <div class="section-head">
+      <span class="number">02 · Farver</span>
+      <h2>Fire farver. Tre opgaver.</h2>
+    </div>
+    <div class="swatch-row">
+      <div class="sw jet"><div>Jet Black</div><div class="hex">#111111 · ink</div></div>
+      <div class="sw alab"><div>Alabaster</div><div class="hex">#F3F3F3 · bg</div></div>
+      <div class="sw conc"><div>Concrete</div><div class="hex">#B6B6B6 · alt</div></div>
+      <div class="sw aur"><div>Aureolin</div><div class="hex">#F1EB2F · accent</div></div>
+    </div>
+  </section>
+
+  <!-- Type -->
+  <section>
+    <div class="section-head">
+      <span class="number">03 · Typografi</span>
+      <h2>EB Garamond. Hanken Grotesk. Stort tracking.</h2>
+    </div>
+    <div class="type-grid">
+      <div class="meta">Display</div>
+      <div class="serif" style="font-size: 64px; line-height: 0.95;">Vi er iværksættere fra Sønderjylland.</div>
+      <div class="meta">H2</div>
+      <div class="serif" style="font-size: 36px;">Tre virksomheder. En adresse.</div>
+      <div class="meta">Body</div>
+      <div class="sans" style="font-size: 17px; line-height: 1.55; max-width: 640px;">Tobias og Julie Silverstein Hinchely driver Den Sidste Flaske, Bistro Neuf og Det Sidste Bureau fra Sønderjylland. 250.000+ kunder, tre lande, snart 50 ansatte. De holder foredrag om iværksætteri og sidder i bestyrelser.</div>
+      <div class="meta">CTA</div>
+      <div class="sans" style="font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;">Book foredrag →</div>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section>
+    <div class="section-head">
+      <span class="number">04 · Knapper</span>
+      <h2>To stilarter. Tre størrelser.</h2>
+    </div>
+    <div class="btn-row">
+      <button class="btn">Book foredrag <span>→</span></button>
+      <button class="btn ghost">Se vores virksomheder</button>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section>
+    <div class="section-head">
+      <span class="number">05 · Stemme</span>
+      <h2>Sønderjysk, direkte, autentisk.</h2>
+    </div>
+    <div style="background: var(--jet-black); color: var(--alabaster); padding: 80px 40px; text-align: center;">
+      <div style="font-size: 22px; color: var(--aureolin); margin-bottom: 24px; line-height: 1;">★</div>
+      <blockquote style="font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; margin: 0; max-width: 800px; margin-inline: auto;">Dygtige hænder er ikke plan B. De er fundamentet.</blockquote>
+      <div style="margin-top: 28px; font-family: var(--font-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--concrete);">Tobias Hinchely · LinkedIn, Marts 2026</div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <div>© 2026 HINCHELYS</div>
+    <div>Bygget i Sønderjylland</div>
+  </footer>
+</main>
+
+</body>
+</html>

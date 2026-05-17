@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--alabaster); padding: 36px 32px; }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .row + .row { margin-top: 28px; }
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-medium);
+    font-size: 13px;
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    height: 48px;
+    padding: 0 24px;
+    border: 1px solid var(--jet-black);
+    border-radius: 2px;
+    background: var(--jet-black);
+    color: var(--alabaster);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn.ghost { background: transparent; color: var(--jet-black); }
+  .btn.lg { height: 56px; padding: 0 32px; }
+  .btn.sm { height: 40px; padding: 0 18px; }
+  .link {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-medium);
+    font-size: 13px;
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--jet-black);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .caption {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--tracking-cta);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    width: 80px;
+  }
+</style>
+</head>
+<body>
+  <div class="row"><div class="caption">Primary</div><button class="btn sm">Send <span>→</span></button><button class="btn">Book foredrag <span>→</span></button><button class="btn lg">Skriv til os <span>→</span></button></div>
+  <div class="row"><div class="caption">Ghost</div><button class="btn ghost sm">Se mere</button><button class="btn ghost">Se vores virksomheder</button><button class="btn ghost lg">Hent pressekit</button></div>
+  <div class="row"><div class="caption">Link</div><button class="link">Læs hele indlægget <span>→</span></button><button class="link">Besøg site <span>→</span></button></div>
+</body>
+</html>

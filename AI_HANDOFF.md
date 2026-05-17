@@ -23,9 +23,9 @@ Last updated: 2026-05-17
 
 - Purpose: Personal brand site for Julie and the client (two founders from Sønderjylland). Not a company site — a platform that collects everything they do.
 - Tone: Authentic and direct — entrepreneurs, not a consultancy.
-- Stack: Not chosen yet. Multi-page content site → leaning toward Vite + React or static HTML/CSS. Avoid over-engineering.
-- Entry points: Not created yet.
-- Brand identity: File pending (ZIP from client, not yet in repo).
+- Stack: **Vite + React** with React Router v6. Inline styles only (no CSS framework). Design system provides all tokens + components.
+- Entry points: `index.html` → `src/main.jsx` → `src/App.jsx`. All 7 routes implemented.
+- Brand identity: Design system extracted and implemented. Assets in `public/assets/`. Design system reference in `Hinchelys Design System/`.
 
 ## Site structure (confirmed by client)
 
@@ -39,21 +39,31 @@ Last updated: 2026-05-17
 
 ## Hard-won context
 
-- Personal brand, not corporate. Two founders together on one site.
+- Personal brand, not corporate. Two founders (Tobias og Julie Silverstein Hinchely) together on one site.
 - Three distinct companies, each needs its own section/card.
-- Content hub likely needs a simple CMS or at least easy manual updates — confirm with client.
+- Content hub is static HTML placeholder posts — no CMS yet. Add content manually in `src/pages/Content.jsx` POSTS array.
 - Tone: Sønderjylland roots, direct, authentic — avoid polished corporate language.
+- Stack is Vite + React with inline styles (no Tailwind, no CSS framework). This is a hard project preference.
+- Design system reference lives in `Hinchelys Design System/` — do not delete. Components are copied into `src/components/`.
+- Forms use Formspree — replace `REPLACE_WITH_FORMSPREE_ID` in EmailSignup.jsx, Footer.jsx, Foredrag.jsx, Kontakt.jsx.
+- Logo files: `public/assets/logotype_black.svg`, `logotype_white.svg`, `logomark_black.svg`, `logomark_white.svg`.
+- Nav is transparent on homepage hero, opaque (frosted) on all other pages and when scrolled.
 
 ## Roadmap
 
-- [ ] Receive and review brand identity (fonts, colors, logo, imagery).
-- [ ] Decide stack: static HTML/CSS vs. Vite/React (depends on content hub complexity).
-- [ ] Build forside with story section.
-- [ ] Build virksomheder section (DSF, Bistro Neuf, Det Sidste Bureau).
-- [ ] Build advisory/bestyrelse section.
-- [ ] Build foredrag section with booking CTA.
-- [ ] Build medie/presse section.
-- [ ] Build content hub (LinkedIn posts — static or CMS-backed).
-- [ ] Build kontakt page with email signup.
-- [ ] Responsive layout, mobile pass, accessibility basics.
+- [x] Receive and review brand identity (fonts, colors, logo, imagery).
+- [x] Decide stack: Vite + React, inline styles, React Router v6.
+- [x] Build forside with hero, stat strip, company cards, quote band, email signup.
+- [x] Build virksomheder page (DSF, Bistro Neuf, Det Sidste Bureau).
+- [x] Build om/advisory page with biography + bestyrelse placeholders.
+- [x] Build foredrag page with booking form (Formspree placeholder).
+- [x] Build medie/presse page with press items.
+- [x] Build content hub with filter chips and PostCard list.
+- [x] Build kontakt page with contact form (Formspree placeholder).
+- [x] Basic responsive layout via auto-fit grids + mobile nav + CSS breakpoints.
+- [ ] Replace Formspree placeholder IDs with real form endpoints.
+- [ ] Add real photography (flash portraits of Tobias & Julie).
+- [ ] Fill in real bestyrelsesposter on Om-siden.
+- [ ] Fill in real presseomtale with actual links.
 - [ ] Deploy and connect domain.
+- [ ] Bestyrelse / Advisory as separate page (currently part of Om).
