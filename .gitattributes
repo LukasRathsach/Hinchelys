@@ -1,1 +1,2 @@
+*.zip filter=lfs diff=lfs merge=lfs -text
 brand_identity.zip filter=lfs diff=lfs merge=lfs -text
