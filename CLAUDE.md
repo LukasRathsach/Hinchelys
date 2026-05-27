@@ -1,3 +1,7 @@
+<!-- AI-CONFIG:START -->
+> Shared AI context: read `~/.claude/AI_CONFIG_INDEX.md` first, then this project file. Universal rules and skills live in `~/.claude/`; project-specific context stays here.
+<!-- AI-CONFIG:END -->
+
 # About Lukas Rathsach
 
 This file is maintained by the AI across sessions. Update it when new things are learned about how Lukas works, what he values, or what to avoid.
